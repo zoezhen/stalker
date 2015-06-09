@@ -54,21 +54,31 @@
           </block>
         </statement>
         <value name="IF1">
-          <block type="math_single" id="439" inline="true">
-            <field name="OP">ABS</field>
-            <value name="NUM">
-              <block type="math_arithmetic" id="500" inline="true">
-                <field name="OP">MINUS</field>
-                <value name="A">
-                  <block type="sensor_object" id="493">
-                    <field name="OBJECT">LEFTFRONT</field>
+          <block type="logic_compare" id="524" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="math_single" id="439" inline="true">
+                <field name="OP">ABS</field>
+                <value name="NUM">
+                  <block type="math_arithmetic" id="500" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="sensor_object" id="493">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="sensor_object" id="507">
+                        <field name="OBJECT">RIGHTFRONT</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
-                <value name="B">
-                  <block type="sensor_object" id="507">
-                    <field name="OBJECT">RIGHTFRONT</field>
-                  </block>
-                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="531">
+                <field name="NUM">20</field>
               </block>
             </value>
           </block>
