@@ -8,6 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="88" inline="false">
+        <mutation elseif="2"></mutation>
         <value name="IF0">
           <block type="logic_operation" id="95" inline="true">
             <field name="OP">LAND</field>
@@ -15,7 +16,7 @@
               <block type="logic_compare" id="102" inline="true">
                 <field name="OP">EQ</field>
                 <value name="A">
-                  <block type="sensor_object" id="124">
+                  <block type="sensor_object" id="264">
                     <field name="OBJECT">LEFTFRONT</field>
                   </block>
                 </value>
@@ -30,7 +31,7 @@
               <block type="logic_compare" id="172" inline="true">
                 <field name="OP">EQ</field>
                 <value name="A">
-                  <block type="sensor_object" id="138">
+                  <block type="sensor_object" id="265">
                     <field name="OBJECT">RIGHTFRONT</field>
                   </block>
                 </value>
@@ -51,6 +52,42 @@
               </block>
             </next>
           </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="332" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="281">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="sensor_object" id="333">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_left" id="353"></block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="354" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_object" id="355">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="sensor_object" id="356">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="movement_right" id="387"></block>
         </statement>
         <next>
           <block type="robot_delay" id="216" inline="true">
